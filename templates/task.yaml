@@ -1,0 +1,28 @@
+id: TASK-PRODUCT-SHORT-001
+type: task
+title: Replace with task title
+summary: One-sentence purpose and expected result.
+product: studio
+owner: priyansh
+assigned_agent: unassigned
+status: backlog
+priority: p2
+objective: Describe the outcome, not only the activity.
+scope:
+  included: []
+  excluded: []
+acceptance_criteria: []
+context:
+  required:
+    - AGENTS.md
+    - context.md
+  optional: []
+  prohibited:
+    - archive/
+approval:
+  required: false
+  reason: null
+verification: []
+dependencies: []
+links: {}
+updated_at: 2026-07-19
