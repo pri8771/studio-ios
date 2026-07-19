@@ -1,0 +1,28 @@
+product: japa
+stage: building
+health: yellow
+priority: p3
+current_milestone:
+  id: MILE-JAPA-LAUNCH
+  name: Close v1 launch gates and ship first TestFlight build
+  progress: 80
+active_work:
+  - TASK-JAPA-LAUNCH-001
+blockers:
+  - Seed-mantra content human sign-off open (JAPA-6).
+  - VoiceOver / accessibility user validation on device open (JAPA-8).
+  - App Store Connect secrets + first verified signed TestFlight upload open (JAPA-9).
+decisions_needed: []
+next_action:
+  task: Configure the four App Store Connect secrets and run the TestFlight workflow once; complete content and VoiceOver sign-offs.
+  owner: atlas
+verification:
+  product_definition: verified-from-repository
+  repository: verified
+  factory_registration: verified
+  build: verified-simulator
+  unit_tests: verified
+  ui_tests: verified
+  device_validation: verified-single-device-2026-07-18
+  testflight_upload: unverified
+updated_at: 2026-07-19

@@ -88,6 +88,8 @@ products:
     stage: building
     health: yellow
     priority: p3
+    context: products/japa/context.md
+    status_file: products/japa/status.yaml
     repository: pri8771/Japa
     owner: priyansh
     updated_at: 2026-07-19

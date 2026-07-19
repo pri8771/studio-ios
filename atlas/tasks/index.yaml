@@ -5,3 +5,8 @@ tasks:
     file: ATLAS-STUDIO-BOOTSTRAP-001.md
     status: ready
     summary: Confirm repository settings, Actions, and main-branch protections; escalate only true human-only checkpoints.
+  - id: TASK-JAPA-LAUNCH-001
+    title: Close Japa v1 launch gates (secrets, sign-offs, Maestro run)
+    file: ATLAS-JAPA-LAUNCH-001.md
+    status: ready
+    summary: Human/Mac-only steps for PROD-JAPA — App Store Connect secrets, first TestFlight upload, content and VoiceOver sign-offs, Maestro simulator run, app-icon alpha fix.

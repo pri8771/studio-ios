@@ -1,0 +1,21 @@
+id: PROD-JAPA
+slug: japa
+name: Japa
+summary: Local-first, eyes-free japa (mantra repetition) counter with distinct per-bead and completion haptics.
+platforms: [ios]
+stage: building
+priority: p3
+health: yellow
+owner: priyansh
+repository: pri8771/Japa
+repository_status: connected
+factory_standard:
+  id: STD-IOS-APP-FACTORY
+  version: 0.4.0
+studio_standard:
+  id: STD-STUDIO-OS
+  version: 0.1.0
+business_model: free-local-first
+shared_infrastructure: false
+graduation_state: standalone
+updated_at: 2026-07-19
