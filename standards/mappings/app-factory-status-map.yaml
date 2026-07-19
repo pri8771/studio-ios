@@ -1,0 +1,27 @@
+schema_version: 1
+# Operational state and implementation truth are separate dimensions.
+operational_to_factory_guidance:
+  backlog: planned
+  ready: planned
+  in-progress: in_progress
+  blocked: unverified
+  in-review: verification_pending
+  completed: verified
+  cancelled: retired
+factory_statuses:
+  - planned
+  - in_progress
+  - implemented
+  - partially_implemented
+  - placeholder
+  - mocked
+  - broken
+  - unverified
+  - verification_pending
+  - verified
+  - deprecated
+  - retired
+rules:
+  - Never infer `verified` only because a task is `completed`.
+  - Never infer task completion only because code is `implemented`.
+  - Store both fields when both dimensions matter.
