@@ -1,0 +1,17 @@
+id: DEC-PRODUCT-SHORT-001
+type: decision
+title: Replace with decision title
+summary: One-sentence active decision.
+product: studio
+owner: priyansh
+status: draft
+context: Why the choice is needed.
+decision: What was chosen.
+alternatives: []
+rationale: Why this option was selected.
+consequences:
+  positive: []
+  negative: []
+revisit_when: []
+links: {}
+updated_at: 2026-07-19
