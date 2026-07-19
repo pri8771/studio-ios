@@ -1,0 +1,16 @@
+schema_version: 1
+products: []
+
+# Add only compact registry entries here. Detailed product data belongs under /products/<slug>/.
+# Example:
+# - id: PROD-CHAIR-001
+#   slug: chairside
+#   name: Chairside
+#   stage: building
+#   health: yellow
+#   priority: p1
+#   context: products/chairside/context.md
+#   status_file: products/chairside/status.yaml
+#   repository: pri8771/chairside-ios
+#   owner: priyansh
+#   updated_at: 2026-07-19
