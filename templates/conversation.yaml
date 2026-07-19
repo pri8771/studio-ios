@@ -1,0 +1,41 @@
+id: CONV-STUDIO-SHORT-001
+type: conversation
+title: Replace with conversation title
+summary: One-sentence current purpose.
+status: draft
+owner: priyansh
+objective: Define the decision or deliverable this conversation must produce.
+participants:
+  - chatgpt
+  - claude
+turn_order:
+  - chatgpt
+  - claude
+schedule:
+  check_every_minutes: 60
+  maximum_turns_per_day: 8
+limits:
+  maximum_turns: 24
+  maximum_duration_days: 5
+  human_checkpoint_after_turns: 8
+context:
+  required:
+    - AGENTS.md
+    - context.md
+  optional: []
+output:
+  issue_number: null
+  rolling_summary: summary.md
+  decisions: decisions.yaml
+  open_questions: open-questions.yaml
+stop_conditions:
+  - deliverable-complete
+  - three-no-progress-turns
+  - human-decision-required
+  - turn-limit-reached
+state:
+  current_turn: 0
+  next_agent: chatgpt
+  last_run_at: null
+  human_review_required: false
+updated_at: 2026-07-19
