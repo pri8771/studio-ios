@@ -1,0 +1,15 @@
+id: RISK-PRODUCT-SHORT-001
+type: risk
+title: Replace with risk title
+summary: One-sentence risk statement.
+product: studio
+owner: priyansh
+status: active
+probability: medium
+impact: medium
+severity: medium
+trigger: null
+mitigation: []
+contingency: []
+links: {}
+updated_at: 2026-07-19
