@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "productId": "PROD-CHAIRSIDE",
+  "standards": [
+    {
+      "id": "STD-STUDIO-OS",
+      "repository": "pri8771/studio-ios",
+      "version": "0.1.0",
+      "commit": "5fa4bf87c3027296e01f57bb4fb7309fd43b1f87",
+      "overrides": []
+    },
+    {
+      "id": "STD-IOS-APP-FACTORY",
+      "repository": "pri8771/iOS_app_factory_rules",
+      "version": "0.4.0",
+      "commit": "8f2b36f52ad7e7fd72f5ca51c0c4b8e8e4ff1e79",
+      "overrides": []
+    }
+  ],
+  "lastChecked": "2026-07-19"
+}
