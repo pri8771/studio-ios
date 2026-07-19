@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Studio OS</title>
+  <style>
+    :root { font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif; color: #171717; background: #f5f5f7; }
+    body { margin: 0; }
+    main { max-width: 1180px; margin: auto; padding: 32px 20px 56px; }
+    h1 { margin: 0; font-size: clamp(2rem, 5vw, 4rem); }
+    .sub { color: #666; margin-top: 8px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 16px; margin-top: 24px; }
+    .card { background: white; border-radius: 18px; padding: 20px; box-shadow: 0 2px 12px #0000000d; }
+    .metric { font-size: 2.2rem; font-weight: 750; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 12px; text-align: left; border-bottom: 1px solid #e8e8e8; }
+    th { color: #666; font-size: .76rem; text-transform: uppercase; letter-spacing: .05em; }
+    .pill { display: inline-block; border-radius: 999px; padding: 4px 9px; background: #efefef; font-size: .8rem; }
+    .wide { grid-column: 1 / -1; overflow-x: auto; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Studio OS</h1>
+  <p class="sub">Portfolio command center · generated from GitHub records</p>
+  <div class="grid">
+    <section class="card"><div class="metric" id="product-count">—</div><div>Registered products</div></section>
+    <section class="card"><div class="metric">3</div><div>Provisional P1 products</div></section>
+    <section class="card"><div class="metric">1</div><div>Human/Atlas blocker</div></section>
+    <section class="card wide">
+      <table><thead><tr><th>Product</th><th>Stage</th><th>Health</th><th>Priority</th><th>Repository</th></tr></thead><tbody id="products"></tbody></table>
+    </section>
+  </div>
+</main>
+<script>
+fetch('./data.json').then(r => r.json()).then(data => {
+  document.querySelector('#product-count').textContent = data.productCount;
+  document.querySelector('#products').innerHTML = data.products.map(p => `<tr><td>${p.name}</td><td><span class="pill">${p.stage}</span></td><td>${p.health}</td><td>${p.priority}</td><td>${p.repository || 'Not registered'}</td></tr>`).join('');
+});
+</script>
+</body>
+</html>
