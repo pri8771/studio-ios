@@ -1,16 +1,97 @@
 schema_version: 1
-products: []
+products:
+  - id: PROD-CHAIRSIDE
+    slug: chairside
+    name: Chairside
+    stage: selected
+    health: yellow
+    priority: p1
+    context: products/chairside/context.md
+    status_file: products/chairside/status.yaml
+    repository: null
+    owner: priyansh
+    updated_at: 2026-07-19
 
-# Add only compact registry entries here. Detailed product data belongs under /products/<slug>/.
-# Example:
-# - id: PROD-CHAIR-001
-#   slug: chairside
-#   name: Chairside
-#   stage: building
-#   health: yellow
-#   priority: p1
-#   context: products/chairside/context.md
-#   status_file: products/chairside/status.yaml
-#   repository: pri8771/chairside-ios
-#   owner: priyansh
-#   updated_at: 2026-07-19
+  - id: PROD-JYOT
+    slug: jyot
+    name: Jyot
+    stage: building
+    health: yellow
+    priority: p1
+    repository: pri8771/digital_temple
+    owner: priyansh
+    updated_at: 2026-07-19
+
+  - id: PROD-POCKET-COURT
+    slug: pocket-party-court
+    name: Pocket Party Court
+    stage: building
+    health: yellow
+    priority: p1
+    repository: pri8771/pocket-party-court-ios
+    owner: priyansh
+    updated_at: 2026-07-19
+
+  - id: PROD-HINDSIGHT
+    slug: hindsight
+    name: Hindsight
+    stage: building
+    health: yellow
+    priority: p2
+    repository: pri8771/hindsight
+    owner: priyansh
+    updated_at: 2026-07-19
+
+  - id: PROD-TESSERA
+    slug: tessera
+    name: Tessera
+    stage: building
+    health: yellow
+    priority: p2
+    repository: pri8771/tessera-ios
+    owner: priyansh
+    updated_at: 2026-07-19
+
+  - id: PROD-PATCHWORK
+    slug: patchwork
+    name: Patchwork
+    stage: building
+    health: yellow
+    priority: p2
+    repository: pri8771/patchwork-ios
+    owner: priyansh
+    updated_at: 2026-07-19
+
+  - id: PROD-AURAFIT
+    slug: aurafit
+    name: AuraFit
+    stage: building
+    health: yellow
+    priority: p3
+    repository: pri8771/aurafit
+    owner: priyansh
+    updated_at: 2026-07-19
+
+  - id: PROD-SHADOW-LENS
+    slug: shadow-lens
+    name: Shadow Lens
+    stage: building
+    health: yellow
+    priority: p3
+    repository: pri8771/umbra-ios
+    owner: priyansh
+    updated_at: 2026-07-19
+
+  - id: PROD-JAPA
+    slug: japa
+    name: Japa
+    stage: building
+    health: yellow
+    priority: p3
+    repository: pri8771/Japa
+    owner: priyansh
+    updated_at: 2026-07-19
+
+notes:
+  - This is the initial high-confidence portfolio subset, not a claim that every non-archived repository is an active product.
+  - Product priorities are provisional until the first portfolio review.
