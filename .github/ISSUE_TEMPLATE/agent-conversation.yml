@@ -1,0 +1,47 @@
+name: Start Agent Conversation
+description: Start a bounded multi-agent conversation with rolling summaries and human checkpoints.
+title: "[Conversation] "
+labels:
+  - agent-conversation
+body:
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+      description: What decision or deliverable must this conversation produce?
+    validations:
+      required: true
+  - type: textarea
+    id: participants
+    attributes:
+      label: Participants
+      description: List agents in turn order, such as ChatGPT, Claude, and Codex.
+    validations:
+      required: true
+  - type: input
+    id: frequency
+    attributes:
+      label: Check frequency
+      description: Example: every 60 minutes
+      value: every 60 minutes
+    validations:
+      required: true
+  - type: input
+    id: limits
+    attributes:
+      label: Limits
+      description: Maximum turns, duration, and human checkpoint cadence.
+      value: 24 turns; 5 days; human checkpoint after 8 turns
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Required context
+      description: Link only the smallest files needed.
+  - type: textarea
+    id: deliverable
+    attributes:
+      label: Expected deliverable
+    validations:
+      required: true
