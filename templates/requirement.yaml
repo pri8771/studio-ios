@@ -1,0 +1,16 @@
+id: REQ-PRODUCT-SHORT-001
+type: requirement
+title: Replace with observable behavior
+summary: One-sentence user-visible requirement.
+product: studio
+owner: priyansh
+status: proposed
+priority: must
+source: null
+acceptance_criteria: []
+verification:
+  method: null
+  evidence: null
+dependencies: []
+links: {}
+updated_at: 2026-07-19
