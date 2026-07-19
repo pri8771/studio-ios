@@ -21,3 +21,12 @@ jobs:
           python-version: "3.12"
       - name: Validate rules and records
         run: python scripts/validate_repo.py
+      - name: Check standard drift
+        run: python scripts/check_standard_drift.py
+      - name: Generate dashboard
+        run: python scripts/generate_dashboard.py
+      - name: Upload dashboard artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: studio-dashboard
+          path: dashboard/
