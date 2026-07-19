@@ -1,0 +1,43 @@
+id: TASK-STUDIO-PILOT-001
+type: task
+title: Select and import the first pilot product
+summary: Choose one existing app and convert only its current truth into the Studio OS compact product structure.
+product: studio
+owner: priyansh
+assigned_agent: chatgpt
+status: ready
+priority: p1
+objective: Validate the product manifest, status, context, requirement, decision, and risk patterns before importing the full portfolio.
+scope:
+  included:
+    - one product only
+    - compact current context
+    - current status
+    - top requirements
+    - active decisions and risks
+  excluded:
+    - full historical migration
+    - raw research migration
+    - all-product import
+acceptance_criteria:
+  - Product appears in registry/products.yaml.
+  - Product has context.md under 1500 words.
+  - Product has a valid status.yaml.
+  - Canonical records do not duplicate current truth.
+  - Repository validation passes.
+context:
+  required:
+    - AGENTS.md
+    - context.md
+    - standards/documentation/standard.md
+  optional: []
+  prohibited:
+    - archive/
+approval:
+  required: true
+  reason: Human must choose which existing product becomes the pilot.
+verification:
+  - python scripts/validate_repo.py
+dependencies: []
+links: {}
+updated_at: 2026-07-19
