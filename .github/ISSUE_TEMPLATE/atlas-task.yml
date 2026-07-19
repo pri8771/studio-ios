@@ -1,0 +1,38 @@
+name: Atlas Browser Task
+description: Assign a browser-dependent setup task to Atlas with explicit human-only checkpoints.
+title: "[Atlas] "
+labels:
+  - atlas
+  - browser-task
+body:
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+    validations:
+      required: true
+  - type: textarea
+    id: systems
+    attributes:
+      label: Authorized systems
+    validations:
+      required: true
+  - type: textarea
+    id: autonomous_steps
+    attributes:
+      label: Steps Atlas should complete autonomously
+    validations:
+      required: true
+  - type: textarea
+    id: checkpoints
+    attributes:
+      label: Human-only checkpoints
+      value: Authentication, MFA, CAPTCHA, payment, legal acceptance, sensitive consent, recovery, or irreversible consequential action.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Required evidence
+    validations:
+      required: true
