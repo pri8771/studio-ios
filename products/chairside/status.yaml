@@ -1,0 +1,23 @@
+product: chairside
+stage: selected
+health: yellow
+priority: p1
+current_milestone:
+  id: MILE-CHAIRSIDE-BOOTSTRAP
+  name: Product repository and core vertical slice
+  progress: 10
+active_work:
+  - TASK-STUDIO-IMPORT-001
+blockers:
+  - Repository is not present in the accessible GitHub inventory.
+  - Build and simulator verification are unavailable.
+decisions_needed: []
+next_action:
+  task: Create or identify Chairside repository and run App Factory bootstrap.
+  owner: atlas
+verification:
+  product_definition: verified-from-prior-approved-context
+  repository: unverified
+  build: unverified
+  ui_tests: not-implemented
+updated_at: 2026-07-19
