@@ -1,0 +1,7 @@
+schema_version: 1
+automations: []
+
+# Required fields:
+# id, name, purpose, status, owner, trigger, schedule, inputs, systems,
+# outputs, approval, retry, idempotency, failure_notification,
+# disable_procedure, rollback, usage_cap, last_run, updated_at.
