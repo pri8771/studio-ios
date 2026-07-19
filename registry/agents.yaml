@@ -1,0 +1,26 @@
+schema_version: 1
+agents:
+  - id: AGENT-CHATGPT-001
+    name: ChatGPT
+    role: cross-system coordination and synthesis
+    status: active
+    write_scope: repository-and-approved-connectors
+    consequential_actions: human-approval
+  - id: AGENT-CLAUDE-001
+    name: Claude
+    role: product reasoning, documentation, research, and marketing synthesis
+    status: planned
+    write_scope: repository-and-approved-connectors
+    consequential_actions: human-approval
+  - id: AGENT-CODEX-001
+    name: Codex
+    role: implementation, tests, automation, integrations, and dashboards
+    status: active
+    write_scope: repository
+    consequential_actions: human-approval
+  - id: AGENT-ATLAS-001
+    name: Atlas
+    role: browser-based setup, account configuration, and human-checkpoint routing
+    status: planned
+    write_scope: approved-browser-tasks
+    consequential_actions: human-approval
