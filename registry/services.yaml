@@ -1,0 +1,8 @@
+schema_version: 1
+services: []
+
+# Each service record should include:
+# id, name, purpose, status, owner, data_held, authentication,
+# free_tier_limit, usage_warning, export_path, replacement, failure_behavior,
+# products, updated_at.
+# Never store secret values here.
