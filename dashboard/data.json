@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "productCount": 9,
+  "products": [
+    {"id":"PROD-CHAIRSIDE","name":"Chairside","stage":"selected","health":"yellow","priority":"p1","repository":null},
+    {"id":"PROD-JYOT","name":"Jyot","stage":"building","health":"yellow","priority":"p1","repository":"pri8771/digital_temple"},
+    {"id":"PROD-POCKET-COURT","name":"Pocket Party Court","stage":"building","health":"yellow","priority":"p1","repository":"pri8771/pocket-party-court-ios"},
+    {"id":"PROD-HINDSIGHT","name":"Hindsight","stage":"building","health":"yellow","priority":"p2","repository":"pri8771/hindsight"},
+    {"id":"PROD-TESSERA","name":"Tessera","stage":"building","health":"yellow","priority":"p2","repository":"pri8771/tessera-ios"},
+    {"id":"PROD-PATCHWORK","name":"Patchwork","stage":"building","health":"yellow","priority":"p2","repository":"pri8771/patchwork-ios"},
+    {"id":"PROD-AURAFIT","name":"AuraFit","stage":"building","health":"yellow","priority":"p3","repository":"pri8771/aurafit"},
+    {"id":"PROD-SHADOW-LENS","name":"Shadow Lens","stage":"building","health":"yellow","priority":"p3","repository":"pri8771/umbra-ios"},
+    {"id":"PROD-JAPA","name":"Japa","stage":"building","health":"yellow","priority":"p3","repository":"pri8771/Japa"}
+  ],
+  "generatedFrom": "registry/products.yaml",
+  "generatedAt": "2026-07-19"
+}
