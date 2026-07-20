@@ -1,0 +1,33 @@
+id: STATUS-PROD-POCKET-COURT
+type: product-status
+title: "Pocket Party Court current status"
+summary: "One-case flow works; launch-critical game-state, test wiring, and release assets remain incomplete."
+status: active
+owner: priyansh
+updated_at: 2026-07-19
+product: PROD-POCKET-COURT
+stage: building
+health: red
+priority: p1
+repository: pri8771/pocket-party-court-ios
+current_milestone: App Factory enrollment and launch-critical stabilization
+active_work:
+  - enroll repository in App Factory
+  - wire existing tests into Xcode project
+  - add generated UI smoke-test manifests
+blockers:
+  - three-player voting defect
+  - no multi-case scoring loop
+  - no restart-safe game state machine
+  - tests not executed by CI
+  - missing app icon and privacy manifest
+  - no macOS build or UI-test evidence recorded
+decisions_needed:
+  - confirm whether local history remains in v1
+next_action: Enroll repository, establish deterministic UI fixtures, and run baseline build on macOS
+verification:
+  repository: verified
+  app_factory: unverified
+  build: unverified
+  unit_tests: unverified
+  ui_tests: not-implemented
