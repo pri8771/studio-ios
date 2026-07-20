@@ -26,8 +26,10 @@ products:
     slug: pocket-party-court
     name: Pocket Party Court
     stage: building
-    health: yellow
+    health: red
     priority: p1
+    context: products/pocket-party-court/context.md
+    status_file: products/pocket-party-court/status.yaml
     repository: pri8771/pocket-party-court-ios
     owner: priyansh
     updated_at: 2026-07-19
