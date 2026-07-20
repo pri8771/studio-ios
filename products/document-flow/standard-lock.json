@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "productId": "PROD-DOCUMENT-FLOW",
+  "standards": [
+    {
+      "id": "STD-STUDIO-OS",
+      "repository": "pri8771/studio-ios",
+      "version": "0.1.0",
+      "commit": "7bead0c5619af5168a59f3aafa327415211b7837",
+      "overrides": []
+    },
+    {
+      "id": "STD-IOS-APP-FACTORY",
+      "repository": "pri8771/iOS_app_factory_rules",
+      "version": "0.4.0",
+      "commit": "4b8b12ea87d78d392485ea8a73440a17ee50bba9",
+      "overrides": []
+    }
+  ],
+  "lastChecked": "2026-07-20"
+}
