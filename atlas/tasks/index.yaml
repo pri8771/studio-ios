@@ -4,7 +4,27 @@ tasks:
     title: Configure GitHub repository safeguards
     file: ATLAS-STUDIO-BOOTSTRAP-001.md
     status: ready
-    summary: Confirm repository settings, Actions, and main-branch protections; escalate only true human-only checkpoints.
+    summary: Confirm repository settings, Actions, branch protections, and why private-repository jobs fail before executing any steps.
+  - id: TASK-DOCUMENT-FLOW-CREATE-001
+    title: Create and verify Document Flow
+    file: ATLAS-DOCUMENT-FLOW-CREATE-001.md
+    status: ready
+    summary: Run the merged Studio CLI on an authenticated Mac to create, enroll, and verify the private Document Flow repository.
+  - id: TASK-CHAIRSIDE-REPO-001
+    title: Create or identify Chairside repository
+    file: ATLAS-CHAIRSIDE-REPO-001.md
+    status: ready
+    summary: Find the authoritative Chairside repository or create the private product repository and bootstrap it safely.
+  - id: TASK-STUDIO-MAC-RUNNER-001
+    title: Configure Studio macOS runner
+    file: ATLAS-MAC-RUNNER-001.md
+    status: ready
+    summary: Configure a restricted macOS runner for Xcode and generated Maestro test execution.
+  - id: TASK-STUDIO-DASHBOARD-001
+    title: Deploy private Studio dashboard
+    file: ATLAS-DASHBOARD-DEPLOY-001.md
+    status: ready
+    summary: Deploy the generated dashboard behind authentication without exposing private Studio OS data.
   - id: TASK-JAPA-LAUNCH-001
     title: Close Japa v1 launch gates
     file: ATLAS-JAPA-LAUNCH-001.md
