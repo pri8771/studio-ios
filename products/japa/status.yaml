@@ -23,6 +23,7 @@ verification:
   build: verified-simulator
   unit_tests: verified
   ui_tests: verified
+  ui_flows_maestro: verified-simulator-2026-07-19
   device_validation: verified-single-device-2026-07-18
   testflight_upload: unverified
 updated_at: 2026-07-19

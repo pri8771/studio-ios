@@ -27,11 +27,13 @@ steps an autonomous agent cannot safely perform.
 4. **VoiceOver validation (JAPA-8).** Run the primary flow on a physical device
    with VoiceOver and record evidence. Dynamic Type is already implemented and
    smoke-tested; this is the assistive-tech user validation only.
-5. **Maestro simulator run (UI testing).** On a macOS runner with the Maestro CLI
-   installed, execute the generated flows in `pri8771/Japa` `quality/ui/generated/`
-   (`MAESTRO_APP_ID=com.priyansh.japa`) against a booted simulator and record the
-   result. Flows are generated and schema-valid but were not run at enrollment
-   time (no Maestro CLI available).
+5. **Maestro simulator run (UI testing).** DONE 2026-07-19 — 4/4 flows passed on
+   Maestro 2.6.1 against an iPhone 17 Pro simulator (evidence:
+   `pri8771/Japa` `quality/evidence/2026-07-19-maestro-ui-flows.md`; executable
+   copies in `quality/ui/runnable/`). Remaining upstream improvement: have the
+   App Factory generator emit `launchApp: arguments:` and teach the app to read
+   the `UI_*` flags from launch arguments (Maestro-settable) plus a test-mode
+   intro skip, so the raw generated flows run without the hand-added intro step.
 6. **Fix the App Store marketing icon.** The 1024×1024 app icon has an alpha
    channel; flatten to opaque RGB before submission (App Store Connect rejects
    marketing icons with transparency).
