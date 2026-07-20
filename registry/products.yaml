@@ -90,9 +90,11 @@ products:
     stage: building
     health: yellow
     priority: p3
+    context: products/japa/context.md
+    status_file: products/japa/status.yaml
     repository: pri8771/Japa
     owner: priyansh
-    updated_at: 2026-07-19
+    updated_at: 2026-07-20
 
 notes:
   - This is the initial high-confidence portfolio subset, not a claim that every non-archived repository is an active product.
