@@ -1,0 +1,29 @@
+product: japa
+stage: building
+health: yellow
+priority: p3
+current_milestone:
+  id: MILE-JAPA-LAUNCH
+  name: Merge enrollment and close v1 launch gates
+  progress: 75
+active_work:
+  - TASK-JAPA-LAUNCH-001
+blockers:
+  - Product enrollment PR CI fails during tests and is not merged.
+  - Seed-mantra content human sign-off is open.
+  - VoiceOver validation on device is open.
+  - App Store Connect secrets and first signed TestFlight upload are open.
+decisions_needed: []
+next_action:
+  task: Diagnose the Japa PR test failure, merge enrollment, then complete launch-only human gates.
+  owner: claude
+verification:
+  product_definition: verified-from-repository
+  repository: verified
+  factory_registration: pending-merge
+  build: verified-simulator-locally
+  unit_tests: locally-verified-ci-failing
+  ui_tests: locally-verified-ci-failing
+  maestro_flows: generated-and-manually-run
+  testflight_upload: unverified
+updated_at: 2026-07-20
