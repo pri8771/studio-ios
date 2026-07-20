@@ -10,6 +10,7 @@ Central operating system for a multi-product, AI-operated software studio.
 - Task, requirement, decision, risk, and conversation templates
 - Multi-agent coordination state
 - Repository validation and generated dashboard data
+- Integration with `pri8771/iOS_app_factory_rules`
 
 ## Start here
 
@@ -21,18 +22,42 @@ Central operating system for a multi-product, AI-operated software studio.
 
 ## Current status
 
-Foundation bootstrap is in progress. No product has been imported as the pilot yet.
+The governance and validation foundation is active. Chairside is registered as the definition-level pilot, Pocket Party Court is the first repository-backed engineering pilot, and the remaining portfolio is registered at an initial inventory level.
+
+Current implementation priorities:
+
+1. Prove one-command enrollment on real product repositories.
+2. Generate Studio OS records automatically from App Factory registration.
+3. Generate manifest-driven Maestro UI smoke flows.
+4. Run iOS build and UI verification on a macOS runner.
+5. Feed repository, validation, and test health into the dashboard.
+
+## Enroll an app
+
+From this repository:
+
+```bash
+python scripts/studio_enroll.py \
+  --target /path/to/product-repository \
+  --repo pri8771/product-repository \
+  --name "Product Name" \
+  --mode existing \
+  --platforms ios
+```
+
+The command bootstraps App Factory registration when needed, inspects the product, creates or updates Studio OS product records, adds UI-test manifests when missing, and regenerates the dashboard. It does not claim Xcode verification unless a macOS build actually runs.
 
 ## Human intervention policy
 
-Browser-dependent setup should be assigned to Atlas using files under [`atlas/tasks/`](atlas/tasks/). Atlas should continue autonomously until authentication, MFA, payment, legal acceptance, or another true human-only checkpoint is reached.
+Browser-dependent setup should be assigned to Atlas using files under [`atlas/tasks/`](atlas/tasks/). Atlas should continue autonomously until authentication, MFA, payment, legal acceptance, Apple signing approval, or another true human-only checkpoint is reached.
 
 ## Key locations
 
 - `standards/` — shared rules
 - `registry/` — compact studio indexes
 - `templates/` — canonical record templates
-- `scripts/` — validation and generation tools
-- `atlas/` — browser-task queue
+- `scripts/` — enrollment, validation, drift detection, and generation tools
+- `atlas/` — browser and Mac task queue
 - `products/` — product-specific context and records
-- `generated/` — derived views; never edit manually
+- `dashboard/` — generated portfolio view
+- `generated/` — other derived views; never edit manually
