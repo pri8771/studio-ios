@@ -1,8 +1,106 @@
 schema_version: 1
-services: []
+services:
+  - id: VENDOR-GITHUB
+    name: GitHub
+    purpose: Source control, product repositories, approvals, issues, CI, and Studio OS automation.
+    status: active
+    owner: priyansh
+    data_held: Code, internal documentation, issues, pull requests, generated artifacts.
+    authentication: GitHub account with MFA; secrets stored in repository or environment secret stores.
+    free_tier_limit: Public Actions included; private Actions usage subject to account allowance.
+    usage_warning: Studio OS private workflow jobs currently fail before executing steps; Atlas diagnosis required.
+    export_path: Git clone and GitHub API exports.
+    replacement: Self-hosted Git forge if required.
+    failure_behavior: Product repositories remain locally cloneable; automation and dashboard freshness stop.
+    products: [all]
+    updated_at: 2026-07-20
 
-# Each service record should include:
-# id, name, purpose, status, owner, data_held, authentication,
-# free_tier_limit, usage_warning, export_path, replacement, failure_behavior,
-# products, updated_at.
-# Never store secret values here.
+  - id: VENDOR-GOOGLE
+    name: Google Account or Workspace
+    purpose: Shared email, calendar, Drive, aliases, and operational files.
+    status: planned
+    owner: priyansh
+    data_held: Email, calendar, shared files, vendor and product assets.
+    authentication: Google account with MFA.
+    free_tier_limit: Start with one free Google account; Workspace only when domain email administration justifies it.
+    usage_warning: Do not create one Workspace per product or paid seats for applications and automation identities.
+    export_path: Google Takeout and Drive exports.
+    replacement: Proton/Zoho plus independent file storage.
+    failure_behavior: GitHub remains authoritative for code and product records; communications pause.
+    products: [all]
+    updated_at: 2026-07-20
+
+  - id: VENDOR-ATTIO
+    name: Attio
+    purpose: Shared multi-product CRM with product-specific interests, lifecycle, and consent.
+    status: planned
+    owner: priyansh
+    data_held: People, companies, opportunities, product interest, consent, and follow-up state.
+    authentication: Attio account and MCP/API authorization.
+    free_tier_limit: Use hosted free plan while eligible; monitor object, user, email, and reporting limits.
+    usage_warning: Customer consent must remain product-specific; do not copy raw CRM data into Git.
+    export_path: CSV/API export.
+    replacement: Self-hosted Twenty or another API/MCP-capable CRM.
+    failure_behavior: Customer outreach pauses; product operation and source records continue.
+    products: [all]
+    updated_at: 2026-07-20
+
+  - id: VENDOR-CLOUDFLARE
+    name: Cloudflare
+    purpose: Public studio website, private dashboard access, DNS, and optional email routing.
+    status: foundation-ready
+    owner: priyansh
+    data_held: Static website assets, access policy, DNS metadata, aggregate web analytics.
+    authentication: Cloudflare account with MFA.
+    free_tier_limit: Use Pages, Access, analytics, and routing only within free allowances.
+    usage_warning: Private dashboard must never be deployed without Access or equivalent authentication.
+    export_path: Static generated website, DNS export, repository source.
+    replacement: GitHub Pages for public site; another authenticated static host for private dashboard.
+    failure_behavior: Re-deploy generated static outputs elsewhere.
+    products: [all]
+    updated_at: 2026-07-20
+
+  - id: VENDOR-POSTIZ
+    name: Postiz
+    purpose: Agent-operable social scheduling after human approval.
+    status: planned
+    owner: priyansh
+    data_held: Social account authorization, drafts, schedules, and publication metadata.
+    authentication: MCP, CLI, API, and platform OAuth.
+    free_tier_limit: Prefer self-hosted or no-cost allowance; verify current terms before connection.
+    usage_warning: Publishing remains a consequential action requiring approval.
+    export_path: API/CLI exports and canonical campaign files in GitHub.
+    replacement: Buffer free plus native platform schedulers.
+    failure_behavior: Approved content remains in Git; publish manually or through native schedulers.
+    products: [all]
+    updated_at: 2026-07-20
+
+  - id: VENDOR-BREVO
+    name: Brevo
+    purpose: Shared marketing and transactional email delivery.
+    status: planned
+    owner: priyansh
+    data_held: Subscriber synchronization, sender identities, templates, campaigns, and delivery events.
+    authentication: API key stored only in a secret store.
+    free_tier_limit: Stay within the provider's current free daily send allowance.
+    usage_warning: Sending requires approved campaign content and valid product-specific consent.
+    export_path: CSV/API export; canonical template source in GitHub.
+    replacement: Another API-capable email provider.
+    failure_behavior: Queue approved messages and pause sending.
+    products: [all]
+    updated_at: 2026-07-20
+
+  - id: VENDOR-PIPEDREAM
+    name: Pipedream
+    purpose: Low-volume webhook and connector bridge for events not handled cleanly by GitHub Actions.
+    status: optional
+    owner: priyansh
+    data_held: Workflow definitions, connected-account tokens, and transient event payloads.
+    authentication: OAuth and encrypted connected accounts.
+    free_tier_limit: Use only within current free workflow and credit limits.
+    usage_warning: GitHub Actions remains primary; do not move canonical logic into opaque visual workflows.
+    export_path: Workflow code/export and repository documentation.
+    replacement: Activepieces, n8n, or direct code.
+    failure_behavior: Event integrations pause without affecting canonical records.
+    products: [all]
+    updated_at: 2026-07-20
