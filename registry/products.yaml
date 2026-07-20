@@ -94,6 +94,18 @@ products:
     owner: priyansh
     updated_at: 2026-07-19
 
+  - id: PROD-CONDUIT
+    slug: conduit
+    name: Conduit
+    stage: building
+    health: yellow
+    priority: p3
+    context: products/conduit/context.md
+    status_file: products/conduit/status.yaml
+    repository: pri8771/conduit-ios
+    owner: priyansh
+    updated_at: 2026-07-20
+
 notes:
   - This is the initial high-confidence portfolio subset, not a claim that every non-archived repository is an active product.
   - Product priorities are provisional until the first portfolio review.

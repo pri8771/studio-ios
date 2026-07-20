@@ -1,43 +1,14 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Studio OS</title>
-  <style>
-    :root { font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif; color: #171717; background: #f5f5f7; }
-    body { margin: 0; }
-    main { max-width: 1180px; margin: auto; padding: 32px 20px 56px; }
-    h1 { margin: 0; font-size: clamp(2rem, 5vw, 4rem); }
-    .sub { color: #666; margin-top: 8px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 16px; margin-top: 24px; }
-    .card { background: white; border-radius: 18px; padding: 20px; box-shadow: 0 2px 12px #0000000d; }
-    .metric { font-size: 2.2rem; font-weight: 750; }
-    table { width: 100%; border-collapse: collapse; }
-    th, td { padding: 12px; text-align: left; border-bottom: 1px solid #e8e8e8; }
-    th { color: #666; font-size: .76rem; text-transform: uppercase; letter-spacing: .05em; }
-    .pill { display: inline-block; border-radius: 999px; padding: 4px 9px; background: #efefef; font-size: .8rem; }
-    .wide { grid-column: 1 / -1; overflow-x: auto; }
-  </style>
-</head>
-<body>
-<main>
-  <h1>Studio OS</h1>
-  <p class="sub">Portfolio command center · generated from GitHub records</p>
-  <div class="grid">
-    <section class="card"><div class="metric" id="product-count">—</div><div>Registered products</div></section>
-    <section class="card"><div class="metric">3</div><div>Provisional P1 products</div></section>
-    <section class="card"><div class="metric">1</div><div>Human/Atlas blocker</div></section>
-    <section class="card wide">
-      <table><thead><tr><th>Product</th><th>Stage</th><th>Health</th><th>Priority</th><th>Repository</th></tr></thead><tbody id="products"></tbody></table>
-    </section>
-  </div>
-</main>
-<script>
-fetch('./data.json').then(r => r.json()).then(data => {
-  document.querySelector('#product-count').textContent = data.productCount;
-  document.querySelector('#products').innerHTML = data.products.map(p => `<tr><td>${p.name}</td><td><span class="pill">${p.stage}</span></td><td>${p.health}</td><td>${p.priority}</td><td>${p.repository || 'Not registered'}</td></tr>`).join('');
-});
-</script>
-</body>
-</html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Studio OS</title><style>
+:root{color-scheme:light dark}body{font-family:system-ui,-apple-system,sans-serif;margin:0;background:#f5f5f7;color:#1d1d1f}main{max-width:1400px;margin:auto;padding:32px}h1{margin-bottom:4px}.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin:24px 0}article,.card{background:white;border-radius:16px;padding:20px;box-shadow:0 1px 4px #0002}.metric{font-size:2rem;font-weight:750}.card{overflow:auto}table{width:100%;border-collapse:collapse;min-width:1050px}th,td{text-align:left;vertical-align:top;padding:12px;border-bottom:1px solid #ddd}th{font-size:.75rem;text-transform:uppercase;color:#666}small{color:#666}.badge{display:inline-block;padding:4px 8px;border-radius:999px;background:#e8e8ed;font-size:.78rem}.red,.blocked{background:#ffd7d7}.yellow,.building{background:#fff0bd}.p1{font-weight:700}@media(prefers-color-scheme:dark){body{background:#111;color:#eee}article,.card{background:#1c1c1e}th,td{border-color:#38383a}small,th{color:#aaa}.badge{background:#333}}
+</style></head><body><main><h1>Studio OS</h1><p>Generated portfolio, blocker, and verification view</p><section class="summary"><article><div class="metric">10</div><div>Registered products</div></article><article><div class="metric">3</div><div>Fully imported</div></article><article><div class="metric">1</div><div>Red health</div></article><article><div class="metric">1</div><div>Missing repositories</div></article></section><section class="card"><table><thead><tr><th>Product</th><th>Stage</th><th>Health</th><th>Priority</th><th>Blockers</th><th>Verification</th><th>Next action</th></tr></thead><tbody><tr><td><strong>Chairside</strong><br><small>No repository</small></td><td><span class="badge selected">selected</span></td><td><span class="badge yellow">yellow</span></td><td><span class="badge p1">p1</span></td><td>2</td><td>factory unknown; build unverified; UI not-implemented</td><td>task: Create or identify Chairside repository and run App Factory bootstrap.</td></tr>
+<tr><td><strong>Jyot</strong><br><small>pri8771/digital_temple</small></td><td><span class="badge building">building</span></td><td><span class="badge yellow">yellow</span></td><td><span class="badge p1">p1</span></td><td>—</td><td>not imported</td><td>Create compact product records</td></tr>
+<tr><td><strong>Pocket Party Court</strong><br><small>pri8771/pocket-party-court-ios</small></td><td><span class="badge building">building</span></td><td><span class="badge red">red</span></td><td><span class="badge p1">p1</span></td><td>6</td><td>factory unverified; build unverified; UI not-implemented</td><td>Enroll repository, establish deterministic UI fixtures, and run baseline build on macOS</td></tr>
+<tr><td><strong>Hindsight</strong><br><small>pri8771/hindsight</small></td><td><span class="badge building">building</span></td><td><span class="badge yellow">yellow</span></td><td><span class="badge p2">p2</span></td><td>—</td><td>not imported</td><td>Create compact product records</td></tr>
+<tr><td><strong>Tessera</strong><br><small>pri8771/tessera-ios</small></td><td><span class="badge building">building</span></td><td><span class="badge yellow">yellow</span></td><td><span class="badge p2">p2</span></td><td>—</td><td>not imported</td><td>Create compact product records</td></tr>
+<tr><td><strong>Patchwork</strong><br><small>pri8771/patchwork-ios</small></td><td><span class="badge building">building</span></td><td><span class="badge yellow">yellow</span></td><td><span class="badge p2">p2</span></td><td>—</td><td>not imported</td><td>Create compact product records</td></tr>
+<tr><td><strong>AuraFit</strong><br><small>pri8771/aurafit</small></td><td><span class="badge building">building</span></td><td><span class="badge yellow">yellow</span></td><td><span class="badge p3">p3</span></td><td>—</td><td>not imported</td><td>Create compact product records</td></tr>
+<tr><td><strong>Shadow Lens</strong><br><small>pri8771/umbra-ios</small></td><td><span class="badge building">building</span></td><td><span class="badge yellow">yellow</span></td><td><span class="badge p3">p3</span></td><td>—</td><td>not imported</td><td>Create compact product records</td></tr>
+<tr><td><strong>Japa</strong><br><small>pri8771/Japa</small></td><td><span class="badge building">building</span></td><td><span class="badge yellow">yellow</span></td><td><span class="badge p3">p3</span></td><td>—</td><td>not imported</td><td>Create compact product records</td></tr>
+<tr><td><strong>Conduit</strong><br><small>pri8771/conduit-ios</small></td><td><span class="badge building">building</span></td><td><span class="badge yellow">yellow</span></td><td><span class="badge p3">p3</span></td><td>1</td><td>factory true; build unverified; UI unverified</td><td>Run App Factory validation and generated UI smoke flows on macOS</td></tr></tbody></table></section></main></body></html>

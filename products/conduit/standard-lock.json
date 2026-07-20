@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "productId": "PROD-CONDUIT",
+  "standards": [
+    {
+      "id": "STD-STUDIO-OS",
+      "version": "0.1.0"
+    },
+    {
+      "id": "STD-IOS-APP-FACTORY",
+      "version": "0.4.0"
+    }
+  ],
+  "lastChecked": "2026-07-20"
+}

@@ -1,0 +1,23 @@
+id: STATUS-PROD-CONDUIT
+type: product-status
+title: "Conduit current status"
+summary: "Enrolled; macOS build and generated UI execution remain unverified."
+status: active
+owner: priyansh
+updated_at: 2026-07-20
+product: PROD-CONDUIT
+stage: building
+health: yellow
+priority: p3
+repository: pri8771/conduit-ios
+current_milestone: Complete enrollment verification
+active_work: []
+blockers:
+  - macOS build and simulator verification not yet recorded
+decisions_needed: []
+next_action: Run App Factory validation and generated UI smoke flows on macOS
+verification:
+  repository: verified
+  app_factory: true
+  build: unverified
+  ui_tests: unverified

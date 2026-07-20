@@ -1,0 +1,12 @@
+id: PROD-CONDUIT
+type: product
+title: "Conduit"
+summary: "Repository-backed product enrolled through the Studio OS enrollment command."
+status: active
+owner: priyansh
+updated_at: 2026-07-20
+slug: conduit
+repository: pri8771/conduit-ios
+platforms: [ios]
+factory_standard: 0.4.0
+studio_standard: 0.1.0
