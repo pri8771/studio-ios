@@ -1,0 +1,15 @@
+id: PROD-POCKET-COURT
+type: product
+title: "Pocket Party Court"
+summary: "Offline pass-the-phone party game that turns silly disputes into short mock trials and shareable verdict cards."
+status: active
+owner: priyansh
+updated_at: 2026-07-19
+slug: pocket-party-court
+repository: pri8771/pocket-party-court-ios
+platforms: [ios, ipados]
+category: party-game
+architecture: local-first
+minimum_os: ios-17
+factory_standard: 0.4.0
+studio_standard: 0.1.0
