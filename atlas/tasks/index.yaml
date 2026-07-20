@@ -1,5 +1,10 @@
 schema_version: 1
 tasks:
+  - id: TASK-DOCUMENT-FLOW-001
+    title: Implement Document Flow providers and persistence
+    file: TASK-DOCUMENT-FLOW-001.md
+    status: ready
+    summary: Choose approved local OCR, extraction, validation, and storage implementations; no provider is working yet.
   - id: TASK-STUDIO-ATLAS-001
     title: Configure GitHub repository safeguards
     file: ATLAS-STUDIO-BOOTSTRAP-001.md

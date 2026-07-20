@@ -1,0 +1,30 @@
+id: STATUS-PROD-DOCUMENT-FLOW
+type: product-status
+title: Document Flow current status
+summary: Local foundation created; frontend build and placeholder test passed, while processing providers and persistence remain explicitly unavailable.
+status: active
+owner: priyansh
+updated_at: 2026-07-20
+product: PROD-DOCUMENT-FLOW
+stage: building
+health: yellow
+priority: p2
+repository: /Users/pchordia/Documents/studio-ios/02_Products/Document_Flow/repository
+current_milestone:
+  name: Local foundation and verification
+active_work: []
+blockers:
+  - OCR, classification, extraction, validation, output, and persistence providers are not implemented
+  - Backend runtime dependencies are not installed locally
+  - Docker Compose v2 and docker-compose are unavailable locally
+decisions_needed:
+  - Select approved local provider implementations before processing real documents
+next_action:
+  task: Install backend dependencies, then implement local provider adapters with tests
+verification:
+  repository: locally-verified
+  app_factory: implemented-local-registration
+  build: frontend-locally-verified
+  unit_tests: placeholder-locally-verified
+  ui_tests: not-implemented
+  docker: blocked-local-tooling-unavailable

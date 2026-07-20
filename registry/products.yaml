@@ -1,5 +1,17 @@
 schema_version: 1
 products:
+  - id: PROD-DOCUMENT-FLOW
+    slug: document-flow
+    name: Document Flow
+    stage: building
+    health: yellow
+    priority: p2
+    context: products/document-flow/context.md
+    status_file: products/document-flow/status.yaml
+    repository: /Users/pchordia/Documents/studio-ios/02_Products/Document_Flow/repository
+    owner: priyansh
+    updated_at: 2026-07-20
+
   - id: PROD-CHAIRSIDE
     slug: chairside
     name: Chairside

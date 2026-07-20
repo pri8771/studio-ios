@@ -1,5 +1,33 @@
 schema_version: 1
-services: []
+services:
+  - id: SVC-LOCAL-CRM
+    name: Local CRM store
+    purpose: Private contacts substitute
+    status: active
+    owner: priyansh
+    data_held: Local contact records
+    authentication: none
+    free_tier_limit: local-only
+    usage_warning: No production customer data or secrets
+    export_path: .local/crm/contacts.json
+    replacement: Export JSON to a future approved CRM
+    failure_behavior: Contact workflows remain manual
+    products: []
+    updated_at: 2026-07-20
+  - id: SVC-LOCAL-OPERATIONS
+    name: Local operations stores
+    purpose: Private marketing, calendar, approvals, and inbox substitutes
+    status: active
+    owner: priyansh
+    data_held: Private operational drafts and metadata
+    authentication: none
+    free_tier_limit: local-only
+    usage_warning: No secrets or production data
+    export_path: .local/
+    replacement: Export JSON to future approved services
+    failure_behavior: Work remains local and manual
+    products: []
+    updated_at: 2026-07-20
 
 # Each service record should include:
 # id, name, purpose, status, owner, data_held, authentication,

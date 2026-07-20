@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$ROOT"
+python3 scripts/validate_repo.py
+python3 scripts/check_standard_drift.py
+python3 scripts/setup_local_workspace.py --apply --root "$ROOT" --product "Document Flow" --product "Jyot" --product "Pocket Party Court" --product "Japa"
+python3 scripts/generate_dashboard.py
+python3 scripts/generate_public_site.py
+PORTAL="$ROOT/generated/local-portal"
+rm -rf "$PORTAL"
+mkdir -p "$PORTAL/dashboard" "$PORTAL/website"
+cp dashboard/index.html "$PORTAL/dashboard/index.html"
+cp dashboard/data.json "$PORTAL/dashboard/data.json"
+cp generated/public-site/index.html "$PORTAL/website/index.html"
+cp templates/local-portal-index.html "$PORTAL/index.html"
+python3 scripts/serve_local.py

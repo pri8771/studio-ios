@@ -47,6 +47,10 @@ python scripts/studio_enroll.py \
 
 The command bootstraps App Factory registration when needed, inspects the product, creates or updates Studio OS product records, adds UI-test manifests when missing, and regenerates the dashboard. It does not claim Xcode verification unless a macOS build actually runs.
 
+## Local-first portal
+
+Run `bash scripts/studio-local` for a private loopback-only portal. It creates local private stores, validates records, and generates both the private dashboard and a sanitized website preview. See [`docs/LOCAL_FIRST.md`](docs/LOCAL_FIRST.md) for operating and verification details.
+
 ## Human intervention policy
 
 Browser-dependent setup should be assigned to Atlas using files under [`atlas/tasks/`](atlas/tasks/). Atlas should continue autonomously until authentication, MFA, payment, legal acceptance, Apple signing approval, or another true human-only checkpoint is reached.

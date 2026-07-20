@@ -1,12 +1,24 @@
 {
-  "schemaVersion": 2,
-  "summary": {
-    "registered": 10,
-    "red": 1,
-    "missingRepositories": 1,
-    "fullyImported": 3
-  },
+  "schemaVersion": 3,
+  "localOnly": true,
   "products": [
+    {
+      "id": "PROD-DOCUMENT-FLOW",
+      "slug": "document-flow",
+      "name": "Document Flow",
+      "stage": "building",
+      "health": "yellow",
+      "priority": "p2",
+      "context": "products/document-flow/context.md",
+      "status_file": "products/document-flow/status.yaml",
+      "repository": "/Users/pchordia/Documents/studio-ios/02_Products/Document_Flow/repository",
+      "owner": "priyansh",
+      "updated_at": "2026-07-20",
+      "current_milestone": "name: Local foundation and verification",
+      "next_action": "task: Install backend dependencies, then implement local provider adapters with tests",
+      "verification": "repo locally-verified; factory implemented-local-registration; build frontend-locally-verified; tests not-implemented",
+      "blocker_count": "3"
+    },
     {
       "id": "PROD-CHAIRSIDE",
       "slug": "chairside",
@@ -16,13 +28,13 @@
       "priority": "p1",
       "context": "products/chairside/context.md",
       "status_file": "products/chairside/status.yaml",
-      "repository": null,
+      "repository": "null",
       "owner": "priyansh",
       "updated_at": "2026-07-19",
       "current_milestone": "id: MILE-CHAIRSIDE-BOOTSTRAP",
       "next_action": "task: Create or identify Chairside repository and run App Factory bootstrap.",
-      "verification": "factory unknown; build unverified; UI not-implemented",
-      "blocker_count": 2
+      "verification": "repo unverified; factory unknown; build unverified; tests not-implemented",
+      "blocker_count": "2"
     },
     {
       "id": "PROD-JYOT",
@@ -34,9 +46,10 @@
       "repository": "pri8771/digital_temple",
       "owner": "priyansh",
       "updated_at": "2026-07-19",
-      "verification": "not imported",
-      "next_action": "Create compact product records",
-      "blocker_count": null
+      "current_milestone": "Not recorded",
+      "next_action": "Record next action",
+      "verification": "repo unknown; factory unknown; build unknown; tests unknown",
+      "blocker_count": "0"
     },
     {
       "id": "PROD-POCKET-COURT",
@@ -52,8 +65,8 @@
       "updated_at": "2026-07-19",
       "current_milestone": "App Factory enrollment and launch-critical stabilization",
       "next_action": "Enroll repository, establish deterministic UI fixtures, and run baseline build on macOS",
-      "verification": "factory unverified; build unverified; UI not-implemented",
-      "blocker_count": 6
+      "verification": "repo verified; factory unverified; build unverified; tests not-implemented",
+      "blocker_count": "6"
     },
     {
       "id": "PROD-HINDSIGHT",
@@ -65,9 +78,10 @@
       "repository": "pri8771/hindsight",
       "owner": "priyansh",
       "updated_at": "2026-07-19",
-      "verification": "not imported",
-      "next_action": "Create compact product records",
-      "blocker_count": null
+      "current_milestone": "Not recorded",
+      "next_action": "Record next action",
+      "verification": "repo unknown; factory unknown; build unknown; tests unknown",
+      "blocker_count": "0"
     },
     {
       "id": "PROD-TESSERA",
@@ -79,9 +93,10 @@
       "repository": "pri8771/tessera-ios",
       "owner": "priyansh",
       "updated_at": "2026-07-19",
-      "verification": "not imported",
-      "next_action": "Create compact product records",
-      "blocker_count": null
+      "current_milestone": "Not recorded",
+      "next_action": "Record next action",
+      "verification": "repo unknown; factory unknown; build unknown; tests unknown",
+      "blocker_count": "0"
     },
     {
       "id": "PROD-PATCHWORK",
@@ -93,9 +108,10 @@
       "repository": "pri8771/patchwork-ios",
       "owner": "priyansh",
       "updated_at": "2026-07-19",
-      "verification": "not imported",
-      "next_action": "Create compact product records",
-      "blocker_count": null
+      "current_milestone": "Not recorded",
+      "next_action": "Record next action",
+      "verification": "repo unknown; factory unknown; build unknown; tests unknown",
+      "blocker_count": "0"
     },
     {
       "id": "PROD-AURAFIT",
@@ -107,9 +123,10 @@
       "repository": "pri8771/aurafit",
       "owner": "priyansh",
       "updated_at": "2026-07-19",
-      "verification": "not imported",
-      "next_action": "Create compact product records",
-      "blocker_count": null
+      "current_milestone": "Not recorded",
+      "next_action": "Record next action",
+      "verification": "repo unknown; factory unknown; build unknown; tests unknown",
+      "blocker_count": "0"
     },
     {
       "id": "PROD-SHADOW-LENS",
@@ -121,9 +138,10 @@
       "repository": "pri8771/umbra-ios",
       "owner": "priyansh",
       "updated_at": "2026-07-19",
-      "verification": "not imported",
-      "next_action": "Create compact product records",
-      "blocker_count": null
+      "current_milestone": "Not recorded",
+      "next_action": "Record next action",
+      "verification": "repo unknown; factory unknown; build unknown; tests unknown",
+      "blocker_count": "0"
     },
     {
       "id": "PROD-JAPA",
@@ -135,9 +153,10 @@
       "repository": "pri8771/Japa",
       "owner": "priyansh",
       "updated_at": "2026-07-19",
-      "verification": "not imported",
-      "next_action": "Create compact product records",
-      "blocker_count": null
+      "current_milestone": "Not recorded",
+      "next_action": "Record next action",
+      "verification": "repo unknown; factory unknown; build unknown; tests unknown",
+      "blocker_count": "0"
     },
     {
       "id": "PROD-CONDUIT",
@@ -153,12 +172,68 @@
       "updated_at": "2026-07-20",
       "current_milestone": "Complete enrollment verification",
       "next_action": "Run App Factory validation and generated UI smoke flows on macOS",
-      "verification": "factory true; build unverified; UI unverified",
-      "blocker_count": 1
+      "verification": "repo verified; factory true; build unverified; tests unverified",
+      "blocker_count": "1"
+    }
+  ],
+  "services": [
+    {
+      "id": "SVC-LOCAL-CRM",
+      "name": "Local CRM store",
+      "purpose": "Private contacts substitute",
+      "status": "active",
+      "owner": "priyansh",
+      "data_held": "Local contact records",
+      "authentication": "none",
+      "free_tier_limit": "local-only",
+      "usage_warning": "No production customer data or secrets",
+      "export_path": ".local/crm/contacts.json",
+      "replacement": "Export JSON to a future approved CRM",
+      "failure_behavior": "Contact workflows remain manual",
+      "products": "[]",
+      "updated_at": "2026-07-20"
+    },
+    {
+      "id": "SVC-LOCAL-OPERATIONS",
+      "name": "Local operations stores",
+      "purpose": "Private marketing, calendar, approvals, and inbox substitutes",
+      "status": "active",
+      "owner": "priyansh",
+      "data_held": "Private operational drafts and metadata",
+      "authentication": "none",
+      "free_tier_limit": "local-only",
+      "usage_warning": "No secrets or production data",
+      "export_path": ".local/",
+      "replacement": "Export JSON to future approved services",
+      "failure_behavior": "Work remains local and manual",
+      "products": "[]",
+      "updated_at": "2026-07-20"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "TASK-DOCUMENT-FLOW-001",
+      "title": "Implement Document Flow providers and persistence",
+      "file": "TASK-DOCUMENT-FLOW-001.md",
+      "status": "ready",
+      "summary": "Choose approved local OCR, extraction, validation, and storage implementations; no provider is working yet.",
+      "related": "PROD-DOCUMENT-FLOW",
+      "human_only": "no"
+    },
+    {
+      "id": "TASK-STUDIO-ATLAS-001",
+      "title": "Configure GitHub repository safeguards",
+      "file": "ATLAS-STUDIO-BOOTSTRAP-001.md",
+      "status": "ready",
+      "summary": "Confirm repository settings, Actions, and main-branch protections; escalate only true human-only checkpoints.",
+      "related": "Studio",
+      "human_only": "yes"
     }
   ],
   "generatedFrom": [
     "registry/products.yaml",
+    "registry/services.yaml",
+    "atlas/tasks/index.yaml",
     "products/*/status.yaml"
   ]
 }
