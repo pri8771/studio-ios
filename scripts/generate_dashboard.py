@@ -28,7 +28,7 @@ def product_view() -> list[dict[str, str]]:
     for product in result:
         status_path = product.get("status_file"); status = (ROOT / status_path).read_text(encoding="utf-8") if status_path and (ROOT / status_path).exists() else ""
         blockers = re.search(r"(?ms)^blockers:\s*\n(.*?)(?=^[A-Za-z_]+:|\Z)", status)
-        product.update({"current_milestone": scalar(status,"current_milestone") or nested(status,"current_milestone","name") or "Not recorded", "next_action": scalar(status,"next_action") or nested(status,"next_action","task") or "Record next action", "verification": "; ".join(f"{label} {nested(status,'verification',key) or 'unknown'}" for label,key in [("repo","repository"),("factory","app_factory"),("backend","backend"),("persistence","persistence"),("ocr","ocr"),("build","build"),("tests","unit_tests"),("docker","docker")]), "blocker_count": str(len(re.findall(r"(?m)^\s+-\s+", blockers.group(1))) if blockers else 0)})
+        product.update({"current_milestone": scalar(status,"current_milestone") or nested(status,"current_milestone","name") or "Not recorded", "next_action": scalar(status,"next_action") or nested(status,"next_action","task") or "Record next action", "verification": "; ".join(f"{label} {nested(status,'verification',key) or 'unknown'}" for label,key in [("repo","repository"),("factory","app_factory"),("backend","backend"),("persistence","persistence"),("ocr","ocr"),("pdf","pdf_processing"),("build","build"),("tests","unit_tests"),("docker","docker")]), "blocker_count": str(len(re.findall(r"(?m)^\s+-\s+", blockers.group(1))) if blockers else 0)})
     return result
 def task_view() -> list[dict[str, str]]:
     result = records(ROOT / "atlas/tasks/index.yaml")

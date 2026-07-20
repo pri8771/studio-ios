@@ -23,5 +23,5 @@ class LocalFirstTests(unittest.TestCase):
         self.assertTrue(data["localOnly"])
         self.assertIn("products", data)
         document_flow = next(product for product in data["products"] if product["id"] == "PROD-DOCUMENT-FLOW")
-        self.assertEqual(document_flow["current_milestone"], "Local text and image processing verified")
+        self.assertEqual(document_flow["current_milestone"], "Local text, image, and PDF processing verified")
         self.assertNotIn("task:", document_flow["next_action"])
