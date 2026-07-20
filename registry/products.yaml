@@ -12,6 +12,18 @@ products:
     owner: priyansh
     updated_at: 2026-07-19
 
+  - id: PROD-DOCUMENT-FLOW
+    slug: document-flow
+    name: Document Flow
+    stage: selected
+    health: yellow
+    priority: p1
+    context: products/document-flow/context.md
+    status_file: products/document-flow/status.yaml
+    repository: null
+    owner: priyansh
+    updated_at: 2026-07-20
+
   - id: PROD-JYOT
     slug: jyot
     name: Jyot
