@@ -16,7 +16,7 @@
       "updated_at": "2026-07-20",
       "current_milestone": "name: Local text-fixture processing verified",
       "next_action": "task: Select and implement a local OCR adapter, then extend fixture coverage to scanned documents",
-      "verification": "repo locally-verified; factory implemented-local-registration; build frontend-locally-verified; tests manual-local-smoke-verified",
+      "verification": "repo locally-verified; factory implemented-local-registration; backend locally-verified; persistence sqlite-locally-verified; build frontend-locally-verified; tests locally-verified; docker blocked-local-tooling-unavailable",
       "blocker_count": "2"
     },
     {
@@ -33,7 +33,7 @@
       "updated_at": "2026-07-19",
       "current_milestone": "id: MILE-CHAIRSIDE-BOOTSTRAP",
       "next_action": "task: Create or identify Chairside repository and run App Factory bootstrap.",
-      "verification": "repo unverified; factory unknown; build unverified; tests not-implemented",
+      "verification": "repo unverified; factory unknown; backend unknown; persistence unknown; build unverified; tests unknown; docker unknown",
       "blocker_count": "2"
     },
     {
@@ -48,7 +48,7 @@
       "updated_at": "2026-07-19",
       "current_milestone": "Not recorded",
       "next_action": "Record next action",
-      "verification": "repo unknown; factory unknown; build unknown; tests unknown",
+      "verification": "repo unknown; factory unknown; backend unknown; persistence unknown; build unknown; tests unknown; docker unknown",
       "blocker_count": "0"
     },
     {
@@ -65,7 +65,7 @@
       "updated_at": "2026-07-19",
       "current_milestone": "App Factory enrollment and launch-critical stabilization",
       "next_action": "Enroll repository, establish deterministic UI fixtures, and run baseline build on macOS",
-      "verification": "repo verified; factory unverified; build unverified; tests not-implemented",
+      "verification": "repo verified; factory unverified; backend unknown; persistence unknown; build unverified; tests unverified; docker unknown",
       "blocker_count": "6"
     },
     {
@@ -80,7 +80,7 @@
       "updated_at": "2026-07-19",
       "current_milestone": "Not recorded",
       "next_action": "Record next action",
-      "verification": "repo unknown; factory unknown; build unknown; tests unknown",
+      "verification": "repo unknown; factory unknown; backend unknown; persistence unknown; build unknown; tests unknown; docker unknown",
       "blocker_count": "0"
     },
     {
@@ -95,7 +95,7 @@
       "updated_at": "2026-07-19",
       "current_milestone": "Not recorded",
       "next_action": "Record next action",
-      "verification": "repo unknown; factory unknown; build unknown; tests unknown",
+      "verification": "repo unknown; factory unknown; backend unknown; persistence unknown; build unknown; tests unknown; docker unknown",
       "blocker_count": "0"
     },
     {
@@ -110,7 +110,7 @@
       "updated_at": "2026-07-19",
       "current_milestone": "Not recorded",
       "next_action": "Record next action",
-      "verification": "repo unknown; factory unknown; build unknown; tests unknown",
+      "verification": "repo unknown; factory unknown; backend unknown; persistence unknown; build unknown; tests unknown; docker unknown",
       "blocker_count": "0"
     },
     {
@@ -125,7 +125,7 @@
       "updated_at": "2026-07-19",
       "current_milestone": "Not recorded",
       "next_action": "Record next action",
-      "verification": "repo unknown; factory unknown; build unknown; tests unknown",
+      "verification": "repo unknown; factory unknown; backend unknown; persistence unknown; build unknown; tests unknown; docker unknown",
       "blocker_count": "0"
     },
     {
@@ -140,7 +140,7 @@
       "updated_at": "2026-07-19",
       "current_milestone": "Not recorded",
       "next_action": "Record next action",
-      "verification": "repo unknown; factory unknown; build unknown; tests unknown",
+      "verification": "repo unknown; factory unknown; backend unknown; persistence unknown; build unknown; tests unknown; docker unknown",
       "blocker_count": "0"
     },
     {
@@ -155,7 +155,7 @@
       "updated_at": "2026-07-19",
       "current_milestone": "Not recorded",
       "next_action": "Record next action",
-      "verification": "repo unknown; factory unknown; build unknown; tests unknown",
+      "verification": "repo unknown; factory unknown; backend unknown; persistence unknown; build unknown; tests unknown; docker unknown",
       "blocker_count": "0"
     },
     {
@@ -172,7 +172,7 @@
       "updated_at": "2026-07-20",
       "current_milestone": "Complete enrollment verification",
       "next_action": "Run App Factory validation and generated UI smoke flows on macOS",
-      "verification": "repo verified; factory true; build unverified; tests unverified",
+      "verification": "repo verified; factory true; backend unknown; persistence unknown; build unverified; tests unknown; docker unknown",
       "blocker_count": "1"
     }
   ],
