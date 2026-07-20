@@ -19,12 +19,21 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Compile Python tools
+        run: python -m compileall -q scripts tests
+      - name: Test Studio CLI
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
       - name: Validate rules and records
         run: python scripts/validate_repo.py
       - name: Check standard drift
         run: python scripts/check_standard_drift.py
       - name: Generate dashboard
         run: python scripts/generate_dashboard.py
+      - name: Smoke-test CLI commands
+        run: |
+          python scripts/studio_cli.py --dry-run validate
+          python scripts/studio_cli.py --dry-run dashboard
+          python scripts/studio_cli.py --dry-run new --name "Document Flow" --no-remote --skip-factory-bootstrap
       - name: Upload dashboard artifact
         uses: actions/upload-artifact@v4
         with:
