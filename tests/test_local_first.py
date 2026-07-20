@@ -22,3 +22,6 @@ class LocalFirstTests(unittest.TestCase):
         data = json.loads((ROOT / "dashboard/data.json").read_text(encoding="utf-8"))
         self.assertTrue(data["localOnly"])
         self.assertIn("products", data)
+        document_flow = next(product for product in data["products"] if product["id"] == "PROD-DOCUMENT-FLOW")
+        self.assertEqual(document_flow["current_milestone"], "Local text-fixture processing verified")
+        self.assertNotIn("task:", document_flow["next_action"])

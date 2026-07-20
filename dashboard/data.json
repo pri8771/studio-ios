@@ -14,8 +14,8 @@
       "repository": "/Users/pchordia/Documents/studio-ios/02_Products/Document_Flow/repository",
       "owner": "priyansh",
       "updated_at": "2026-07-20",
-      "current_milestone": "name: Local text-fixture processing verified",
-      "next_action": "task: Select and implement a local OCR adapter, then extend fixture coverage to scanned documents",
+      "current_milestone": "Local text-fixture processing verified",
+      "next_action": "Select and implement a local OCR adapter, then extend fixture coverage to scanned documents",
       "verification": "repo locally-verified; factory implemented-local-registration; backend locally-verified; persistence sqlite-locally-verified; build frontend-locally-verified; tests locally-verified; docker blocked-local-tooling-unavailable",
       "blocker_count": "2"
     },
@@ -31,8 +31,8 @@
       "repository": "null",
       "owner": "priyansh",
       "updated_at": "2026-07-19",
-      "current_milestone": "id: MILE-CHAIRSIDE-BOOTSTRAP",
-      "next_action": "task: Create or identify Chairside repository and run App Factory bootstrap.",
+      "current_milestone": "Product repository and core vertical slice",
+      "next_action": "Create or identify Chairside repository and run App Factory bootstrap.",
       "verification": "repo unverified; factory unknown; backend unknown; persistence unknown; build unverified; tests unknown; docker unknown",
       "blocker_count": "2"
     },

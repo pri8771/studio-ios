@@ -18,7 +18,7 @@ def records(path: Path) -> list[dict[str, str]]:
     if current: items.append(current)
     return items
 def scalar(text: str, key: str) -> str | None:
-    hit = re.search(rf"(?m)^{re.escape(key)}:\s*([^\n#]+)$", text); return unquote(hit.group(1)) if hit else None
+    hit = re.search(rf"(?m)^{re.escape(key)}:[ \t]*([^\n#]+)$", text); return unquote(hit.group(1)) if hit else None
 def nested(text: str, parent: str, key: str) -> str | None:
     block = re.search(rf"(?ms)^{parent}:\s*\n(.*?)(?=^[A-Za-z_]+:|\Z)", text)
     if not block: return None
