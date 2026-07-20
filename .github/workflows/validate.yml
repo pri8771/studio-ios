@@ -40,8 +40,10 @@ jobs:
             python scripts/validate_repo.py
             echo "== Check standard drift =="
             python scripts/check_standard_drift.py
-            echo "== Generate dashboard =="
+            echo "== Generate private dashboard =="
             python scripts/generate_dashboard.py
+            echo "== Generate opt-in public website =="
+            python scripts/generate_public_site.py
             echo "== Smoke-test CLI =="
             python scripts/studio_cli.py --dry-run validate
             python scripts/studio_cli.py --dry-run dashboard
@@ -60,5 +62,6 @@ jobs:
           path: |
             quality/evidence/ci/
             dashboard/
+            generated/public-site/
           if-no-files-found: warn
           retention-days: 14
