@@ -10,7 +10,6 @@ from __future__ import annotations
 import argparse
 import contextlib
 import http.server
-import os
 import shutil
 import socket
 import socketserver
@@ -37,6 +36,7 @@ def copy_tree(source: Path, destination: Path) -> None:
 
 
 def build(skip_validation: bool = False) -> Path:
+    run([sys.executable, "scripts/setup_local_data.py"])
     if not skip_validation:
         run([sys.executable, "scripts/validate_repo.py"])
         run([sys.executable, "scripts/check_standard_drift.py"])
@@ -76,10 +76,10 @@ def build(skip_validation: bool = False) -> Path:
   <h1>Studio OS</h1>
   <p class=\"lead\">A local-only view of the product portfolio and the sanitized shared website. Everything here is regenerated from repository records.</p>
   <section class=\"grid\">
-    <a href=\"dashboard/\"><div class=\"tag\">Private operations</div><h2>Portfolio dashboard</h2><div class=\"desc\">Product health, priorities, blockers, verification, repositories, and next actions.</div><div class=\"arrow\">Open dashboard →</div></a>
+    <a href=\"dashboard/\"><div class=\"tag\">Private operations</div><h2>Portfolio dashboard</h2><div class=\"desc\">Products, shared services, blockers, verification, and the Atlas/human queue.</div><div class=\"arrow\">Open dashboard →</div></a>
     <a href=\"website/\"><div class=\"tag\">Public preview</div><h2>Shared website</h2><div class=\"desc\">The opt-in, sanitized product site. Unpublished products are excluded by default.</div><div class=\"arrow\">Open website →</div></a>
   </section>
-  <footer>Generated locally. No cloud deployment or external service connection is required.</footer>
+  <footer>Generated locally. Private CRM, content, inbox, calendar, and approval stores live under the git-ignored <code>.local/</code> directory.</footer>
 </main></body></html>""",
         encoding="utf-8",
     )
@@ -99,6 +99,7 @@ def serve(directory: Path, port: int, open_browser: bool = True) -> None:
     handler = lambda *args, **kwargs: http.server.SimpleHTTPRequestHandler(  # noqa: E731
         *args, directory=str(directory), **kwargs
     )
+
     class ReusableTCPServer(socketserver.ThreadingTCPServer):
         allow_reuse_address = True
 
