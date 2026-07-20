@@ -1,0 +1,27 @@
+product: document-flow
+stage: selected
+health: yellow
+priority: p1
+current_milestone:
+  id: MILE-DOCUMENT-FLOW-FOUNDATION
+  name: Create and verify the generic document-automation foundation
+  progress: 20
+active_work:
+  - TASK-DOCUMENT-FLOW-CREATE-001
+blockers:
+  - Product repository is not created.
+  - Studio CLI real-run verification requires an authenticated Mac with git, gh, curl, and Docker.
+  - Generated document-ai template has not been built or tested end to end.
+decisions_needed: []
+next_action:
+  task: Run `scripts/studio new` for Document Flow and attach the resulting repository and verification evidence.
+  owner: atlas
+verification:
+  product_definition: approved-working-definition
+  repository: unverified
+  factory_registration: unverified
+  scaffold: unverified
+  docker_config: unverified
+  backend_tests: unverified
+  frontend_build: unverified
+updated_at: 2026-07-20
