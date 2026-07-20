@@ -1,0 +1,47 @@
+name: Sync Task Dashboard
+
+on:
+  issues:
+    types: [opened, edited, labeled, unlabeled, assigned, unassigned, closed, reopened]
+  workflow_dispatch:
+  schedule:
+    - cron: "17 * * * *"
+
+permissions:
+  contents: read
+  issues: read
+
+concurrency:
+  group: task-dashboard-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Generate portfolio dashboard
+        run: python scripts/generate_dashboard.py
+      - name: Sync task issues
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/sync_task_issues.py
+      - name: Add command-center controls
+        run: python scripts/augment_dashboard.py
+      - name: Validate generated files
+        run: |
+          python -m json.tool dashboard/data.json >/dev/null
+          python -m json.tool dashboard/task-issues.json >/dev/null
+          test -s dashboard/index.html
+          test -s dashboard/command-center.js
+      - name: Upload command-center artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: studio-command-center
+          path: dashboard/
+          retention-days: 14
