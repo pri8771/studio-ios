@@ -1,0 +1,6 @@
+.DS_Store
+.local/
+generated/local-portal/
+quality/evidence/ci/
+__pycache__/
+*.pyc
