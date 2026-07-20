@@ -1,0 +1,49 @@
+name: Enroll an app
+description: Enroll a product repository in the iOS App Factory and Studio OS.
+title: "[Enroll] "
+labels: []
+body:
+  - type: input
+    id: repository
+    attributes:
+      label: Repository
+      description: GitHub repository in owner/name form.
+      placeholder: pri8771/pocket-party-court-ios
+    validations:
+      required: true
+  - type: input
+    id: product_name
+    attributes:
+      label: Product name
+      placeholder: Pocket Party Court
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Enrollment mode
+      options:
+        - existing
+        - new
+    validations:
+      required: true
+  - type: input
+    id: platforms
+    attributes:
+      label: Platforms
+      description: Comma-separated Apple platforms.
+      value: ios
+    validations:
+      required: true
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Known constraints or notes
+      description: Optional. Do not include secrets.
+  - type: checkboxes
+    id: approval
+    attributes:
+      label: Authorization
+      options:
+        - label: Agents may prepare repository and Studio OS changes, validation, and pull requests without further routine questions.
+          required: true
