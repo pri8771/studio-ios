@@ -21,7 +21,7 @@ Document Flow is a local foundation for receiving documents and moving them thro
 - Studio linkage: `PROD-DOCUMENT-FLOW` registry and status records.
 - Backend and frontend: locally verified with FastAPI, Vite, and automated API tests.
 - Persistence: SQLite is locally verified for the local milestone; PostgreSQL Compose remains declared but unavailable on this Mac.
-- Processing: deterministic text-fixture classification, extraction, and validation are locally verified. Image/PDF OCR remains explicitly unavailable.
+- Processing: deterministic text-fixture classification, extraction, and validation are locally verified. English PNG/JPEG OCR is locally verified with Tesseract; PDF OCR remains explicitly unavailable.
 
 ## Deferred external integration
 

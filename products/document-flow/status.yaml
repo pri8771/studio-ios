@@ -1,7 +1,7 @@
 id: STATUS-PROD-DOCUMENT-FLOW
 type: product-status
 title: Document Flow current status
-summary: Local text-fixture flow is verified with SQLite persistence; image/PDF OCR and PostgreSQL Docker Compose remain unavailable.
+summary: Local text and PNG/JPEG OCR flows are verified with SQLite persistence; PDF OCR and PostgreSQL Docker Compose remain unavailable.
 status: active
 owner: priyansh
 updated_at: 2026-07-20
@@ -11,15 +11,15 @@ health: yellow
 priority: p2
 repository: /Users/pchordia/Documents/studio-ios/02_Products/Document_Flow/repository
 current_milestone:
-  name: Local text-fixture processing verified
+  name: Local text and image processing verified
 active_work: []
 blockers:
-  - Image and PDF OCR provider is not implemented
+  - PDF OCR provider is not implemented
   - PostgreSQL Docker Compose tooling is unavailable locally; SQLite is the verified local persistence fallback
 decisions_needed:
-  - Select an approved OCR provider before processing scanned or PDF documents
+  - Select a PDF OCR approach before processing PDF documents
 next_action:
-  task: Select and implement a local OCR adapter, then extend fixture coverage to scanned documents
+  task: Add safe PDF OCR and document-page rendering, then add PDF fixture coverage
 verification:
   repository: locally-verified
   app_factory: implemented-local-registration
@@ -27,6 +27,7 @@ verification:
   persistence: sqlite-locally-verified
   classification: deterministic-text-locally-verified
   extraction: deterministic-text-locally-verified
+  ocr: tesseract-image-locally-verified
   validation: locally-verified
   build: frontend-locally-verified
   unit_tests: locally-verified
