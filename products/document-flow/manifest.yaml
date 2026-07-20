@@ -1,0 +1,21 @@
+id: PROD-DOCUMENT-FLOW
+slug: document-flow
+name: Document Flow
+summary: Configurable document intake, classification, extraction, validation, human review, and structured output for arbitrary business documents.
+platforms: [web]
+stage: selected
+priority: p1
+health: yellow
+owner: priyansh
+repository: null
+repository_status: pending-creation
+factory_standard:
+  id: STD-IOS-APP-FACTORY
+  version: 0.4.0
+studio_standard:
+  id: STD-STUDIO-OS
+  version: 0.1.0
+business_model: b2b-software
+shared_infrastructure: true
+graduation_state: shared
+updated_at: 2026-07-20
