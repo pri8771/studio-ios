@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import importlib.util
+import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -9,6 +10,7 @@ MODULE_PATH = Path(__file__).resolve().parents[1] / "scripts" / "studio_cli.py"
 SPEC = importlib.util.spec_from_file_location("studio_cli", MODULE_PATH)
 assert SPEC and SPEC.loader
 studio_cli = importlib.util.module_from_spec(SPEC)
+sys.modules[SPEC.name] = studio_cli
 SPEC.loader.exec_module(studio_cli)
 
 
