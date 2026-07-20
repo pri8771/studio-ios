@@ -1,0 +1,37 @@
+id: TASK-STUDIO-UI-PILOT-001
+type: task
+title: "Complete Pocket Party Court generated UI-test pilot"
+summary: "Wire accessibility identifiers and deterministic fixtures, then execute generated Maestro flows on macOS."
+status: blocked
+owner: priyansh
+updated_at: 2026-07-19
+product: PROD-POCKET-COURT
+priority: p1
+assigned_agent: codex
+acceptance_criteria:
+  - Pocket Party Court is enrolled in the App Factory.
+  - Required accessibility identifiers in quality/ui/screens.yaml exist in SwiftUI source.
+  - UI_TEST_MODE supports the declared deterministic fixtures.
+  - Maestro flows generate successfully.
+  - The app builds on a macOS runner.
+  - The launch smoke flow executes with evidence.
+context:
+  required:
+    - products/pocket-party-court/context.md
+    - products/pocket-party-court/status.yaml
+    - standards/domains/IOS_APP_FACTORY.md
+  optional:
+    - reports/app-factory-integration-audit.md
+  prohibited:
+    - secrets
+approval:
+  required:
+    - human approval before enabling a broadly accessible self-hosted runner
+verification:
+  method:
+    - GitHub Actions macOS workflow
+    - Maestro JUnit report
+    - uploaded workflow artifacts
+blockers:
+  - self-hosted macOS runner is not configured
+  - source accessibility identifiers and fixture adapter are not implemented
