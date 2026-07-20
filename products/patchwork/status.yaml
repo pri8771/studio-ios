@@ -1,0 +1,17 @@
+product: patchwork
+stage: building
+health: yellow
+priority: p2
+current_milestone: Verify map-conquest build and offline data readiness
+active_work: []
+blockers:
+  - Current repository build and test evidence has not been imported into Studio OS.
+decisions_needed: []
+next_action: Audit pri8771/patchwork-ios and record verified build, tests, blockers, and next milestone.
+verification:
+  repository: registered-unverified
+  factory_registration: unknown
+  build: unknown
+  unit_tests: unknown
+  ui_tests: unknown
+updated_at: 2026-07-20
