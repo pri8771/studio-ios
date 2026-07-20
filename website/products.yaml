@@ -1,0 +1,16 @@
+schema_version: 1
+products:
+  # Public website entries are opt-in. Nothing from the private Studio OS
+  # registry is published unless an approved entry below sets published: true.
+  - product_id: PROD-DOCUMENT-FLOW
+    slug: document-flow
+    name: Document Flow
+    published: false
+    tagline: Turn business documents into reviewed structured data.
+    description: Configurable document intake, extraction, validation, review, and output.
+    status_label: In development
+    app_url: null
+    waitlist_url: null
+    support_url: null
+    privacy_url: null
+    updated_at: 2026-07-20
