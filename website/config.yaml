@@ -1,0 +1,10 @@
+schema_version: 1
+site:
+  name: Studio
+  tagline: Small, focused software products built with care.
+  base_url: null
+  support_path: /support/
+  privacy_path: /privacy/
+  output_directory: generated/public-site
+  default_product_visibility: hidden
+  updated_at: 2026-07-20
