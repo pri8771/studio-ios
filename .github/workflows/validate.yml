@@ -9,24 +9,56 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: studio-validation-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 12
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Validate rules and records
-        run: python scripts/validate_repo.py
-      - name: Check standard drift
-        run: python scripts/check_standard_drift.py
-      - name: Generate dashboard
-        run: python scripts/generate_dashboard.py
-      - name: Upload dashboard artifact
+
+      - name: Run Studio OS validation suite
+        shell: bash
+        run: |
+          set -o pipefail
+          mkdir -p quality/evidence/ci
+          {
+            echo "== Compile Python tools =="
+            python -m compileall -q scripts tests
+            echo "== Test Studio CLI =="
+            python -m unittest discover -s tests -p 'test_*.py' -v
+            echo "== Validate rules and records =="
+            python scripts/validate_repo.py
+            echo "== Check standard drift =="
+            python scripts/check_standard_drift.py
+            echo "== Generate dashboard =="
+            python scripts/generate_dashboard.py
+            echo "== Smoke-test CLI =="
+            python scripts/studio_cli.py --dry-run validate
+            python scripts/studio_cli.py --dry-run dashboard
+            python scripts/studio_cli.py --dry-run new \
+              --name "Document Flow" \
+              --target "$RUNNER_TEMP/document-flow-dry-run" \
+              --no-remote \
+              --skip-factory-bootstrap
+          } 2>&1 | tee quality/evidence/ci/studio-validation.log
+
+      - name: Upload validation evidence
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: studio-dashboard
-          path: dashboard/
+          name: studio-validation-${{ github.sha }}
+          path: |
+            quality/evidence/ci/
+            dashboard/
+          if-no-files-found: warn
+          retention-days: 14
