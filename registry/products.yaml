@@ -30,9 +30,10 @@ products:
     stage: building
     health: yellow
     priority: p1
+    status_file: products/jyot/status.yaml
     repository: pri8771/digital_temple
     owner: priyansh
-    updated_at: 2026-07-19
+    updated_at: 2026-07-20
 
   - id: PROD-POCKET-COURT
     slug: pocket-party-court
@@ -52,9 +53,10 @@ products:
     stage: building
     health: yellow
     priority: p2
+    status_file: products/hindsight/status.yaml
     repository: pri8771/hindsight
     owner: priyansh
-    updated_at: 2026-07-19
+    updated_at: 2026-07-20
 
   - id: PROD-TESSERA
     slug: tessera
@@ -62,9 +64,10 @@ products:
     stage: building
     health: yellow
     priority: p2
+    status_file: products/tessera/status.yaml
     repository: pri8771/tessera-ios
     owner: priyansh
-    updated_at: 2026-07-19
+    updated_at: 2026-07-20
 
   - id: PROD-PATCHWORK
     slug: patchwork
@@ -72,9 +75,10 @@ products:
     stage: building
     health: yellow
     priority: p2
+    status_file: products/patchwork/status.yaml
     repository: pri8771/patchwork-ios
     owner: priyansh
-    updated_at: 2026-07-19
+    updated_at: 2026-07-20
 
   - id: PROD-AURAFIT
     slug: aurafit
@@ -82,9 +86,10 @@ products:
     stage: building
     health: yellow
     priority: p3
+    status_file: products/aurafit/status.yaml
     repository: pri8771/aurafit
     owner: priyansh
-    updated_at: 2026-07-19
+    updated_at: 2026-07-20
 
   - id: PROD-SHADOW-LENS
     slug: shadow-lens
@@ -92,9 +97,10 @@ products:
     stage: building
     health: yellow
     priority: p3
+    status_file: products/shadow-lens/status.yaml
     repository: pri8771/umbra-ios
     owner: priyansh
-    updated_at: 2026-07-19
+    updated_at: 2026-07-20
 
   - id: PROD-JAPA
     slug: japa

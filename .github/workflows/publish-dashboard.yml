@@ -1,0 +1,69 @@
+name: Publish Studio Dashboard
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'registry/**'
+      - 'products/**'
+      - 'atlas/tasks/**'
+      - 'dashboard/**'
+      - 'scripts/generate_dashboard.py'
+      - 'scripts/augment_dashboard_staleness.py'
+      - '.github/workflows/publish-dashboard.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: '17 11 * * *'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: studio-dashboard-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-dashboard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate canonical records
+        run: |
+          python scripts/validate_repo.py
+          python scripts/check_standard_drift.py
+      - name: Generate read-only dashboard
+        run: |
+          python scripts/generate_dashboard.py
+          python scripts/augment_dashboard_staleness.py
+      - name: Upload dashboard artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: studio-dashboard-${{ github.run_id }}
+          path: dashboard/
+          retention-days: 30
+
+  deploy-cloudflare:
+    needs: build-dashboard
+    if: ${{ vars.CLOUDFLARE_PAGES_PROJECT != '' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          python scripts/generate_dashboard.py
+          python scripts/augment_dashboard_staleness.py
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dashboard --project-name=${{ vars.CLOUDFLARE_PAGES_PROJECT }}
