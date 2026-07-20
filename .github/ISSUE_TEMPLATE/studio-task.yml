@@ -1,0 +1,88 @@
+name: Studio task
+description: Create assignable work for a product, agent, or human owner
+title: "[TASK] "
+labels: ["studio-task", "status:queued"]
+body:
+  - type: dropdown
+    id: product
+    attributes:
+      label: Product
+      options:
+        - Studio OS
+        - Chairside
+        - Jyot
+        - Pocket Party Court
+        - Hindsight
+        - Tessera
+        - Patchwork
+        - AuraFit
+        - Shadow Lens
+        - Japa
+        - Document Flow
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: assignee_agent
+    attributes:
+      label: Execution owner
+      options:
+        - Codex
+        - Claude
+        - ChatGPT
+        - Atlas
+        - Human
+        - Unassigned
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options: [P0, P1, P2, P3]
+    validations:
+      required: true
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+      description: Describe the outcome, not merely the activity.
+      placeholder: Add multi-round scoring with persistent scores and a final winner.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: One checkable criterion per line.
+      placeholder: |
+        - Supports 3–8 players
+        - Scores persist across rounds
+        - Unit tests cover ties and restart behavior
+    validations:
+      required: true
+  - type: dropdown
+    id: approval
+    attributes:
+      label: Human approval required before
+      options:
+        - Merge
+        - Production deployment
+        - External communication
+        - Spending or purchase
+        - Permission or security change
+        - Public release
+        - No additional approval
+    validations:
+      required: true
+  - type: input
+    id: due
+    attributes:
+      label: Due date
+      description: Optional ISO date, YYYY-MM-DD.
+      placeholder: 2026-08-01
+  - type: textarea
+    id: context
+    attributes:
+      label: Context and constraints
+      description: Add links, repository paths, non-goals, safety boundaries, or dependencies.
