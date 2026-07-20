@@ -1,7 +1,7 @@
 id: STATUS-PROD-DOCUMENT-FLOW
 type: product-status
 title: Document Flow current status
-summary: Local foundation created; frontend build and placeholder test passed, while processing providers and persistence remain explicitly unavailable.
+summary: Local text-fixture flow is verified with SQLite persistence; image/PDF OCR and PostgreSQL Docker Compose remain unavailable.
 status: active
 owner: priyansh
 updated_at: 2026-07-20
@@ -11,20 +11,24 @@ health: yellow
 priority: p2
 repository: /Users/pchordia/Documents/studio-ios/02_Products/Document_Flow/repository
 current_milestone:
-  name: Local foundation and verification
+  name: Local text-fixture processing verified
 active_work: []
 blockers:
-  - OCR, classification, extraction, validation, output, and persistence providers are not implemented
-  - Backend runtime dependencies are not installed locally
-  - Docker Compose v2 and docker-compose are unavailable locally
+  - Image and PDF OCR provider is not implemented
+  - PostgreSQL Docker Compose tooling is unavailable locally; SQLite is the verified local persistence fallback
 decisions_needed:
-  - Select approved local provider implementations before processing real documents
+  - Select an approved OCR provider before processing scanned or PDF documents
 next_action:
-  task: Install backend dependencies, then implement local provider adapters with tests
+  task: Select and implement a local OCR adapter, then extend fixture coverage to scanned documents
 verification:
   repository: locally-verified
   app_factory: implemented-local-registration
+  backend: locally-verified
+  persistence: sqlite-locally-verified
+  classification: deterministic-text-locally-verified
+  extraction: deterministic-text-locally-verified
+  validation: locally-verified
   build: frontend-locally-verified
-  unit_tests: placeholder-locally-verified
-  ui_tests: not-implemented
+  unit_tests: locally-verified
+  ui_tests: manual-local-smoke-verified
   docker: blocked-local-tooling-unavailable

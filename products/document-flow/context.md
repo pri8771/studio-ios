@@ -19,8 +19,9 @@ Document Flow is a local foundation for receiving documents and moving them thro
 - Repository: `/Users/pchordia/Documents/studio-ios/02_Products/Document_Flow/repository`
 - App Factory registration: implemented locally as `.factory/project-context.json`.
 - Studio linkage: `PROD-DOCUMENT-FLOW` registry and status records.
-- Backend and frontend scaffolds: implemented, unverified until their checks run.
-- PostgreSQL Compose definition: implemented; no database persistence claim.
+- Backend and frontend: locally verified with FastAPI, Vite, and automated API tests.
+- Persistence: SQLite is locally verified for the local milestone; PostgreSQL Compose remains declared but unavailable on this Mac.
+- Processing: deterministic text-fixture classification, extraction, and validation are locally verified. Image/PDF OCR remains explicitly unavailable.
 
 ## Deferred external integration
 

@@ -14,10 +14,10 @@
       "repository": "/Users/pchordia/Documents/studio-ios/02_Products/Document_Flow/repository",
       "owner": "priyansh",
       "updated_at": "2026-07-20",
-      "current_milestone": "name: Local foundation and verification",
-      "next_action": "task: Install backend dependencies, then implement local provider adapters with tests",
-      "verification": "repo locally-verified; factory implemented-local-registration; build frontend-locally-verified; tests not-implemented",
-      "blocker_count": "3"
+      "current_milestone": "name: Local text-fixture processing verified",
+      "next_action": "task: Select and implement a local OCR adapter, then extend fixture coverage to scanned documents",
+      "verification": "repo locally-verified; factory implemented-local-registration; build frontend-locally-verified; tests manual-local-smoke-verified",
+      "blocker_count": "2"
     },
     {
       "id": "PROD-CHAIRSIDE",

@@ -56,7 +56,7 @@ def main() -> int:
     checked = 0
 
     for path in ROOT.rglob("*"):
-        if not path.is_file() or ".git" in path.parts or "generated" in path.parts:
+        if not path.is_file() or any(part in {".git", "generated", ".venv", "node_modules", "data", "__pycache__"} for part in path.parts):
             continue
         if path.suffix not in {".md", ".yaml", ".yml", ".json", ".py"}:
             continue
