@@ -102,7 +102,7 @@ products:
     priority: p3
     context: products/conduit/context.md
     status_file: products/conduit/status.yaml
-    repository: pri8771/conduit-ios
+    repository: pri8771/conduit
     owner: priyansh
     updated_at: 2026-07-20
 

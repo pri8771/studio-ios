@@ -9,7 +9,7 @@ product: PROD-CONDUIT
 stage: building
 health: yellow
 priority: p3
-repository: pri8771/conduit-ios
+repository: pri8771/conduit
 current_milestone: Complete enrollment verification
 active_work: []
 blockers:

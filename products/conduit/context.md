@@ -21,7 +21,7 @@ Repository-backed product enrolled in Studio OS. Product definition remains to b
 
 ## Current State
 
-- Repository: `pri8771/conduit-ios`
+- Repository: `pri8771/conduit`
 - App Factory registered: `true`
 - Xcode project/workspace found: `False`
 - Automated UI manifests present: `true`
